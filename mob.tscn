@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://c2p0ko53iyvp0"]
+[gd_scene load_steps=10 format=3 uid="uid://c2p0ko53iyvp0"]
 
-[ext_resource type="Texture2D" uid="uid://k5jwx48a5bk5" path="res://art/enemyFlyingAlt_1.png" id="1_b3mxk"]
-[ext_resource type="Texture2D" uid="uid://bunbtnfswnt7l" path="res://art/enemyFlyingAlt_2.png" id="2_1qmh0"]
-[ext_resource type="Texture2D" uid="uid://bvagt726cfhg7" path="res://art/enemySwimming_1.png" id="3_gfurk"]
-[ext_resource type="Texture2D" uid="uid://c32xy7jfpy056" path="res://art/enemySwimming_2.png" id="4_ieysi"]
-[ext_resource type="Texture2D" uid="uid://cvdflrccnjhtg" path="res://art/enemyWalking_1.png" id="5_cixyi"]
-[ext_resource type="Texture2D" uid="uid://bkp55kqnkefpu" path="res://art/enemyWalking_2.png" id="6_7ulmv"]
+[ext_resource type="Script" uid="uid://b60xgduv6vy5t" path="res://mob.gd" id="1_1qmh0"]
+[ext_resource type="Texture2D" uid="uid://dvgtnwwbnxkr" path="res://art/enemyFlyingAlt_1.png" id="1_b3mxk"]
+[ext_resource type="Texture2D" uid="uid://bv86mdfj5rmiq" path="res://art/enemyFlyingAlt_2.png" id="2_1qmh0"]
+[ext_resource type="Texture2D" uid="uid://b8ki4ki8cr4pt" path="res://art/enemySwimming_1.png" id="3_gfurk"]
+[ext_resource type="Texture2D" uid="uid://ca3ljxvora34e" path="res://art/enemySwimming_2.png" id="4_ieysi"]
+[ext_resource type="Texture2D" uid="uid://vily00dv2s8t" path="res://art/enemyWalking_1.png" id="5_cixyi"]
+[ext_resource type="Texture2D" uid="uid://cw7tpatn2laa5" path="res://art/enemyWalking_2.png" id="6_7ulmv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pcqmr"]
 animations = [{
@@ -44,12 +45,13 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jbnni"]
-radius = 25.0
-height = 50.0
+radius = 28.0
+height = 92.0
 
 [node name="Mob" type="RigidBody2D"]
 collision_mask = 0
 gravity_scale = 0.0
+script = ExtResource("1_1qmh0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.75, 0.75)
@@ -57,7 +59,7 @@ sprite_frames = SubResource("SpriteFrames_pcqmr")
 animation = &"FLY"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(13, 0)
+position = Vector2(-14, -1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_jbnni")
 
